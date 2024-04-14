@@ -46,6 +46,10 @@ class DatabasePersistence
 
   end
 
+  def disconnect
+    @db.close
+  end
+
   def create_new_list(list_name)
     sql = "INSERT INTO lists (name) VALUES ($1)"
     query(sql, list_name)
